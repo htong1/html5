@@ -6,7 +6,7 @@
   <script>
     function process() {
       alert("Hello");
-    }·
+    }
     function checkName(nameInput) {
       alert(nameInput.value);
     }
@@ -15,7 +15,7 @@
 <h1>HT Servies</h1>
 <h2>Complete the for below for my services.</h2>
  <form onsubmit="process()">
-  First name: <input type = "text" name = "first_name" />
+  First name: <input type = "text" name = "first_name" onchange="checkName(this)"/>
   <br>
   Last name: <input type= "text" name = "last_name" />
   <br>
