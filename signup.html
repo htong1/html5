@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html><html>
 <head> 
   <title>
@@ -14,6 +15,10 @@
       if (nameInput.value.length < 2){
       nameInput.focus();
       alert("Your name is too short:" + nameInput.value); 
+      else {nameInput.value = toProperCase (nameInput.value);
+      
+      }
+       function toProperCase (username) {return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
       }
     } 
   </script>
@@ -24,7 +29,7 @@
   First name: <input type = "text" name = "first_name" onchange="checkName(this)"/>
   
   <br>
-  Last name: <input type= "text" name = "last_name" />
+  Last name: <input type= "text" name = "last_name" onchange = "checkname(this)"/>
   <br>
   user ID: <input type="text" name = user_id"/>
   <br>
@@ -47,7 +52,7 @@
   <option value = "10 years old" selected> 10 years old</option>
   <option value = "11 years old"> 11 years old </option>
   <option value = "11 and above"> 11 years and above</option>
-  <br>
+  <b/>
   <textarea rows = "6" cols = "60" name = "Please answer in complete sentences">
   Please answer here. </textarea>
   <br>
