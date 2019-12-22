@@ -8,28 +8,26 @@
     function process() {
       alert("Hello");
     }
-    function toProperCase (username) {return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
     
     function checkName(nameInput) {
       
       if (nameInput.value.length < 2){
       nameInput.focus();
-      alert("Your name is too short:" + nameInput.value); 
+      alert("Your name is too short:" + nameInput.value); }
       else {nameInput.value = toProperCase (nameInput.value);
-      
+           }
       }
        function toProperCase (username) {return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
-      }
-    } 
+       
   </script>
   
 <h1>HT Services</h1>
 <h2>Complete the form below for my services.</h2>
  <form onsubmit="process()">
-  First name: <input type = "text" name = "first_name" onchange="checkName(this)"/>
+  First name: <input type = "text" name = "First Name" onchange="checkName(this)"/>
   
   <br>
-  Last name: <input type= "text" name = "last_name" onchange = "checkname(this)"/>
+  Last name: <input type= "text" name = "Last Name" onchange = "checkName(this)"/>
   <br>
   user ID: <input type="text" name = user_id"/>
   <br>
