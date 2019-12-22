@@ -1,5 +1,4 @@
- 
-<!DOCTYPE html><html>
+  <!DOCTYPE html><html>
 <head> 
   <title>
     Web From
@@ -19,6 +18,17 @@
       }
        function toProperCase (username) {return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
        
+       function checkBirthday(birthdayInput){
+       alert (birthdayInput.value);
+       let date = new Date(birthdayInput.value);
+       alert (date);
+       let year = date.getYear();
+       let now = new Date();
+       alert (year+now);
+       let age = now.getYear() - year;
+       alert (age);
+       }
+       
   </script>
   
 <h1>HT Services</h1>
@@ -37,25 +47,22 @@
   <br>
   Email : <input type = "text" name = "email" />
   <br>
+  Birthday (mm/dd/yy): <input type = "date" name = "birthday" onchange = "checkBirthday(this)"/>
+  <br>
   <select name = "dropdown">
   <option value = "Daily" selected> Daily</option>
   <option value = "weekly"> Weekly </option>
   <option value = "monthly"> Monthly </option>
   <br>
-  <input type = "radio" name= "gender" value = "Male"> Male
-  <br>
+  Gender : <input type = "radio" name= "gender" value = "Male"> Male
   <input type = "radio" name= "gender" value = "Female"> Female
+ 
   <br>
-  <select name = "dropdown">
-  <option value = "10 years old" selected> 10 years old</option>
-  <option value = "11 years old"> 11 years old </option>
-  <option value = "11 and above"> 11 years and above</option>
-  <b/>
   <textarea rows = "6" cols = "60" name = "Please answer in complete sentences">
   Please answer here. </textarea>
   <br>
   <input type = "submit" name = "submit" value = "Submit" />
-  <br>
+  
   <input type="reset" name="reset" value="Reset" />
     </form>
   </body>
