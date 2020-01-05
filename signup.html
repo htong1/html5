@@ -13,7 +13,7 @@
       if (nameInput.value.length < 2){
       nameInput.focus();
       alert("Your name is too short:" + nameInput.value); }
-      else {nameInput.value = toProperCase (nameInput.value);
+      else {nameInput.value = toProperCase (nameInput.value);}
            }
        function toProperCase (username) {return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
        
