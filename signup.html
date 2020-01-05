@@ -1,5 +1,4 @@
-  
-  <!DOCTYPE html><html>
+<!DOCTYPE html><html>
 <head> 
   <title>
     Web From
@@ -36,10 +35,9 @@
        ageInput.focus();
        alert("Unfortunately, you must be younger than 100 years old.:" + ageInput.value);}
        }
-       function checkPassword (passwordInput) {
-       if (passwordInput.value.length < 8) {
-       passwordInput.focus();
-       alert("Your password needs to be at least 8 digits long.:"+ passwordInput.value);}
+    
+       function checkGender(gender){
+       alert(gender)
        }
        
   </script>
@@ -55,10 +53,10 @@
   <br><input type= "text" name = "Last Name" onchange = "checkName(this)"/>
   <br>
   user ID: 
-  <br><input type="text" name = user_id"/>
+  <br><input type="text" name = user_id/>
   <br>
   Password : 
-  <br><input type ="password" name = "Password" onchange = "checkPassword(this)" />
+  <br><input type ="password" name = "Password" />
   <br>
   Home Address:
   <br><input type= "text" name = "home_address" />
@@ -78,11 +76,11 @@
   <option value = "monthly"> Monthly </option>
   <br>
   Gender : 
-  <br><input type = "radio" name= "gender" value = "Male"> Male
-  <input type = "radio" name= "gender" value = "Female"> Female
+  <br><input type = "radio" name= "gender" value = "Gender" onchange = "checkGender('male')"/> Male
+  <input type = "radio" name= "gender" value = "Gender" onchange = "checkGender('female')"/>Female
  
   <br>
-  <textarea rows = "6" cols = "60" name = "Please answer in complete sentences">
+  <textarea rows = "6" cols = "60" name = "Please answer in complete sentences"/>
   Please answer here. </textarea>
   <br>
   <input type = "submit" name = "submit" value = "Submit" />
@@ -90,4 +88,4 @@
   <input type="reset" name="reset" value="Reset" />
     </form>
   </body>
- </html>
+ </html>  
