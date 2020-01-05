@@ -1,91 +1,101 @@
-<!DOCTYPE html><html>
-<head> 
-  <title>
-    Web From
-  </title>
-  <script>
-    function process() {
-      alert("Hello");
-    }
-    
-    function checkName(nameInput) {
-      
-      if (nameInput.value.length < 2){
-      nameInput.focus();
-      alert("Your name is too short:" + nameInput.value); }
-      else {nameInput.value = toProperCase (nameInput.value);}
-           }
-       function toProperCase (username) {return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
-       
-       function checkBirthday(birthdayInput){
-       alert (birthdayInput.value);
-       let date = new Date(birthdayInput.value);
-       alert (date);
-       let year = date.getYear();
-       let now = new Date();
-       alert (year+now);
-       let age = now.getYear() - year;
-       alert (age);
-       }
-       function checkAge (ageInput) {
-       if (ageInput.value < 5){ 
-       ageInput.focus();
-       alert ("Unfortunately, you must be older than 5 years old.:"+ ageInput.value);}
-       if (ageInput.value > 100) {
-       ageInput.focus();
-       alert("Unfortunately, you must be younger than 100 years old.:" + ageInput.value);}
-       }
-    
-       function checkGender(gender){
-       alert(gender)
-       }
-       
-  </script>
-  
-<h1>HT Services</h1>
-<h2>Complete the form below for my services.</h2>
- <form onsubmit="process()">
-  First name:
-  <br><input type = "text" name = "First Name" onchange="checkName(this)"/>
-  
-  <br>
-  Last name:
-  <br><input type= "text" name = "Last Name" onchange = "checkName(this)"/>
-  <br>
-  user ID: 
-  <br><input type="text" name = user_id/>
-  <br>
-  Password : 
-  <br><input type ="password" name = "Password" />
-  <br>
-  Home Address:
-  <br><input type= "text" name = "home_address" />
-  <br>
-  Email :
-  <br><input type = "text" name = "email" />
-  <br>
-  Birthday (mm/dd/yy):
-  <br><input type = "date" name = "birthday" onchange = "checkBirthday(this)"/>
-  <br>
-  Age: 
-  <br><input type = "number" name = "age" onchange = "checkAge(this)"/>
-  <br>
-  <select name = "dropdown">
-  <option value = "Daily" selected> Daily</option>
-  <option value = "weekly"> Weekly </option>
-  <option value = "monthly"> Monthly </option>
-  <br>
-  Gender : 
-  <br><input type = "radio" name= "gender" value = "Gender" onchange = "checkGender('male')"/> Male
-  <input type = "radio" name= "gender" value = "Gender" onchange = "checkGender('female')"/>Female
- 
-  <br>
-  <textarea rows = "6" cols = "60" name = "Please answer in complete sentences"/>
-  Please answer here. </textarea>
-  <br>
-  <input type = "submit" name = "submit" value = "Submit" />
-  
-  <input type="reset" name="reset" value="Reset" />
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Web From
+    </title>
+    <script>
+        function process() {
+            alert("Hello");
+        }
+
+        function checkName(nameInput) {
+
+            if (nameInput.value.length < 2) {
+                nameInput.focus();
+                alert("Your name is too short:" + nameInput.value);
+            } else {
+                nameInput.value = toProperCase(nameInput.value);
+            }
+        }
+
+        function toProperCase(username) {
+            return username.slice(0, 1).toUpperCase() + username.slice(1).toLowerCase()
+        };
+
+        function checkBirthday(birthdayInput) {
+            alert(birthdayInput.value);
+            let date = new Date(birthdayInput.value);
+            alert(date);
+            let year = date.getYear();
+            let now = new Date();
+            alert(year + now);
+            let age = now.getYear() - year;
+            alert(age);
+        }
+
+        function checkAge(ageInput) {
+            if (ageInput.value < 5) {
+                ageInput.focus();
+                alert("Unfortunately, you must be older than 5 years old.:" + ageInput.value);
+            }
+            if (ageInput.value > 100) {
+                ageInput.focus();
+                alert("Unfortunately, you must be younger than 100 years old.:" + ageInput.value);
+            }
+        }
+
+        function checkGender(gender) {
+            alert(gender)
+        }
+    </script>
+
+    <h1>HT Services</h1>
+    <h2>Complete the form below for my services.</h2>
+    <form onsubmit="process()">
+        First name:
+        <br>
+        <input type="text" name="First Name" onchange="checkName(this)" />
+
+        <br> Last name:
+        <br>
+        <input type="text" name="Last Name" onchange="checkName(this)" />
+        <br> user ID:
+        <br>
+        <input type="text" name=u ser_id/>
+        <br> Password :
+        <br>
+        <input type="password" name="Password" />
+        <br> Home Address:
+        <br>
+        <input type="text" name="home_address" />
+        <br> Email :
+        <br>
+        <input type="text" name="email" />
+        <br> Birthday (mm/dd/yy):
+        <br>
+        <input type="date" name="birthday" onchange="checkBirthday(this)" />
+        <br> Age:
+        <br>
+        <input type="number" name="age" onchange="checkAge(this)" />
+        <br>
+        <select name="dropdown">
+            <option value="Daily" selected> Daily</option>
+            <option value="weekly"> Weekly </option>
+            <option value="monthly"> Monthly </option>
+            <br> Gender :
+            <br>
+            <input type="radio" name="gender" value="Gender" onchange="checkGender('male')" /> Male
+            <input type="radio" name="gender" value="Gender" onchange="checkGender('female')" />Female
+
+            <br>
+            <textarea rows="6" cols="60" name="Please answer in complete sentences" /> Please answer here. </textarea>
+            <br>
+            <input type="submit" name="submit" value="Submit" />
+
+            <input type="reset" name="reset" value="Reset" />
     </form>
-  </body>
- </html>  
+    </body>
+
+</html>
