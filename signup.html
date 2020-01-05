@@ -1,3 +1,4 @@
+  
   <!DOCTYPE html><html>
 <head> 
   <title>
@@ -35,6 +36,11 @@
        ageInput.focus();
        alert("Unfortunately, you must be younger than 100 years old.:" + ageInput.value);}
        }
+       function checkPassword (passwordInput) {
+       if (passwordInput.value.length < 8) {
+       passwordInput.focus();
+       alert("Your password needs to be at least 8 digits long.:"+ passwordInput.value);}
+       }
        
   </script>
   
@@ -52,7 +58,7 @@
   <br><input type="text" name = user_id"/>
   <br>
   Password : 
-  <br><input type ="text" name = "password" />
+  <br><input type ="password" name = "Password" onchange = "checkPassword(this)" />
   <br>
   Home Address:
   <br><input type= "text" name = "home_address" />
