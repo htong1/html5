@@ -7,7 +7,7 @@
     </title>
     <script>
         function process() {
-            alert("Hello");
+            alert("Thank you for submitting the form!");
         }
 
         function checkName(nameInput) {
@@ -55,7 +55,16 @@
                 alert("Your password needs to be at least 8 digits long.")
             }
             if (passwordInput.value === passwordInput.value.toLowerCase() || passwordInput.value === passwordInput.value.toUpperCase()) {
-                alert("Not mixed");
+                alert("Your password needs to have mixed cases.");
+            }
+            let hasNumber = false
+            for (let h = 0; h < passwordInput.value.length; h++) {
+                if (0 * passwordInput.value[h] === 0) {
+                    hasNumber = true;
+                }
+            }
+            if (!hasNumber) {
+                alert("Your password needs to have a number!")
             }
         }
     </script>
