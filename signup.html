@@ -49,6 +49,15 @@
         function checkGender(gender) {
             alert(gender)
         }
+
+        function checkPassword(passwordInput) {
+            if (passwordInput.value.length < 8) {
+                alert("Your password needs to be at least 8 digits long.")
+            }
+            if (passwordInput.value === passwordInput.value.toLowerCase() || passwordInput.value === passwordInput.value.toUpperCase()) {
+                alert("Not mixed");
+            }
+        }
     </script>
 
     <h1>HT Services</h1>
@@ -63,10 +72,10 @@
         <input type="text" name="Last Name" onchange="checkName(this)" />
         <br> user ID:
         <br>
-        <input type="text" name=u ser_id/>
+        <input type="text" name="user_id" />
         <br> Password :
         <br>
-        <input type="password" name="Password" />
+        <input type="password" name="Password" onchange="checkPassword(this)" />
         <br> Home Address:
         <br>
         <input type="text" name="home_address" />
