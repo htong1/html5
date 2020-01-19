@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -58,6 +59,7 @@
                 alert("Your password needs to have mixed cases.");
             }
             let hasNumber = false
+            debugger;
             for (let h = 0; h < passwordInput.value.length; h++) {
                 if (0 * passwordInput.value[h] === 0) {
                     hasNumber = true;
@@ -97,6 +99,9 @@
         <br> Age:
         <br>
         <input type="number" name="age" onchange="checkAge(this)" />
+        <br> Phone Number:
+        <br>
+        <input type = "text" name="Phone Number" />
         <br>
         <select name="dropdown">
             <option value="Daily" selected> Daily</option>
