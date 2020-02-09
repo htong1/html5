@@ -1,5 +1,3 @@
- 
-
 <!DOCTYPE html>
 <html>
 
@@ -71,15 +69,24 @@
                 alert("Your password needs to have a number!")
             }
         }
-        
-        function checkPhoneNumber(phoneNumber){
-        debugger;
-        alert(phoneNumber)
-        let cleanNumber = "";
-        for (let n = 0; n < phoneNumber.length; n++){
-        if (0*phoneNumber[n]===0){cleanNumber += phoneNumber[n]}
-        } alert(cleanNumber)
-        
+
+        function checkPhoneNumber(phoneNumberInput) {
+            debugger;
+            phoneNumber = phoneNumberInput.value
+            alert(phoneNumber)
+            let cleanNumber = "";
+            for (let n = 0; n < phoneNumber.length; n++) {
+                if (0 * phoneNumber[n] === 0) {
+                    cleanNumber += phoneNumber[n]
+                }
+            }
+            alert(cleanNumber)
+            if (cleanNumber.length < 10) alert("You do not have your complete phone number.")
+            if (cleanNumber[0] === "1")
+                cleanNumber = cleanNumber.slice(1)
+            alert("This is your phone number without the one in the front." + cleanNumber)
+            phoneNumberInput.value = cleanNumber
+
         }
     </script>
 
@@ -113,7 +120,7 @@
         <input type="number" name="age" onchange="checkAge(this)" />
         <br> Phone Number:
         <br>
-        <input type = "text" name="Phone Number" onchange = "checkPhoneNumber(this.value)" />
+        <input type="text" name="Phone Number" onchange="checkPhoneNumber(this)" />
         <br>
         <select name="dropdown">
             <option value="Daily" selected> Daily</option>
