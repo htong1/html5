@@ -88,6 +88,14 @@
             phoneNumberInput.value = cleanNumber
 
         }
+
+        function checkEmail(Email) {
+            alert(Email)
+            if (Email.index < 1) alert("It is not your complete Email.")
+            if (Email.indexOf("@") > 1 && Email.lastIndexOf(".") > Email.indexOf("@")) {
+                alert("You do not have your complete email.")
+            }
+        }
     </script>
 
     <h1>HT Services</h1>
@@ -111,7 +119,7 @@
         <input type="text" name="home_address" />
         <br> Email :
         <br>
-        <input type="text" name="email" />
+        <input type="text" name="email" onchange="checkEmail(this.value)" />
         <br> Birthday (mm/dd/yy):
         <br>
         <input type="date" name="birthday" onchange="checkBirthday(this)" />
