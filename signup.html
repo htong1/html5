@@ -96,17 +96,17 @@
                 alert("You do not have your complete email.")
             }
         }
-        
-        function chechInfo (info){ 
-        alert(info)
-        let words = info.split(" ");
-        if (words.length <10 ) {
-        alert ("Your response is too short. Please enter more info.")
-        }
-        let sentence = info.split (".");
-        if (sentence.length<3) {
-        alert("Please enter at least 2 sentences.")
-        }
+
+        function checkInfo(info) {
+            alert(info)
+            let words = info.split(" ");
+            if (words.length < 10) {
+                alert("Your response is too short. Please enter more info.")
+            }
+            let sentence = info.split(".");
+            if (sentence.length < 3) {
+                alert("Please enter at least 2 sentences.")
+            }
         }
     </script>
 
@@ -152,7 +152,7 @@
             <input type="radio" name="gender" value="Female" onchange="checkGender('female')" />Female
 
             <br>
-            <textarea rows="6" cols="60" name="info" onchange = "checkInfo(this.value)">  </textarea>
+            <textarea rows="6" cols="60" name="info" onchange="checkInfo(this.value)"> </textarea>
             <br>
             <input type="submit" name="submit" value="Submit" />
 
