@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -11,14 +10,26 @@
             alert("Thank you for submitting the form!");
         }
 
-        function checkName(nameInput) {
+        function checkFirstName(firstnameInput) {
 
-            if (nameInput.value.length < 2) {
-                nameInput.focus();
-                alert("Your name is too short:" + nameInput.value);
+            if (firstnameInput.value.length < 2) {
+                firstnameInput.focus();
+                alert("Your name is too short:" + firstnameInput.value);
             } else {
-                nameInput.value = toProperCase(nameInput.value);
+                firstnameInput.value = toProperCase(firstnameInput.value);
             }
+            localStorage.setItem("firstname", firstnameInput.value)
+        }
+
+        function checkLastName(lastnameInput) {
+
+            if (lastnameInput.value.length < 2) {
+                lastnameInput.focus();
+                alert("Your name is too short:" + lastnameInput.value);
+            } else {
+                lastnameInput.value = toProperCase(lastnameInput.value);
+            }
+            localStorage.setItem("lastname", lastnameInput.value)
         }
 
         function toProperCase(username) {
@@ -116,11 +127,11 @@
     <form onsubmit="process()">
         First name:
         <br>
-        <input type="text" name="First Name" onchange="checkName(this)" />
+        <input type="text" name="First Name" onchange="checkFirstName(this)" />
 
         <br> Last name:
         <br>
-        <input type="text" name="Last Name" onchange="checkName(this)" />
+        <input type="text" name="Last Name" onchange="checkLastName(this)" />
         <br> user ID:
         <br>
         <input type="text" name="user_id" />
@@ -155,7 +166,7 @@
             <br>
             <textarea rows="6" cols="60" name="info" onchange="checkInfo(this.value)"> </textarea>
             <br>
-            <input type="button" name="submit" value="Submit" onclick = "document.location.href='Reply.html'"/>
+            <input type="button" name="submit" value="Submit" onclick="document.location.href='Reply.html'" />
 
             <input type="reset" name="reset" value="Reset" />
     </form>
