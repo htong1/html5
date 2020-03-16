@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<h1>
+Temperature Converter :)
+</h1>
+<body>
+<script>
+function convertFahrenheit(fahrenheitInput){
+document.getElementById("celcius").value = (fahrenheitInput.value - 32) / 1.8
+}
+function convertCelcius(celciusInput){
+document.getElementById("output").value = celciusInput.value * 1.8 + 32
+}
+</script>
+<form>
+Fahrenheit: <input type = "number" name = "Fahrenheit" id = "fahrenheit" oninput  = "convertFahrenheit(this)" />
+<br>
+Celcius: <input type = "number" name = "Celcius" id = "celcius" oninput  = "convertCelcius(this)" />
+<br>
+ <input type = "reset" name = "reset" value = "Reset" />
+</form>
+</body>
+</html>
