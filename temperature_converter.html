@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <style>
+        body {
+            background-color: lightblue
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: cursive;
+            color: aqua;
+            border-width: 10px;
+            border-style: groove;
+            background-color: black;
+        }
+        
+        .temp {
+            text-align: center;
+            font-family: cursive;
+            color: aqua;
+            border-width: 10px;
+            border-style: groove;
+            background-color: black;
+        }
+    </style>
 </head>
 <h1>
 Temperature Converter :)
 </h1>
+
 <body>
-<script>
-function convertFahrenheit(fahrenheitInput){
-document.getElementById("celcius").value = (fahrenheitInput.value - 32) / 1.8
-}
-function convertCelcius(celciusInput){
-document.getElementById("output").value = celciusInput.value * 1.8 + 32
-}
-</script>
-<form>
-Fahrenheit: <input type = "number" name = "Fahrenheit" id = "fahrenheit" oninput  = "convertFahrenheit(this)" />
-<br>
-Celcius: <input type = "number" name = "Celcius" id = "celcius" oninput  = "convertCelcius(this)" />
-<br>
- <input type = "reset" name = "reset" value = "Reset" />
-</form>
+    <script>
+        function convertFahrenheit(fahrenheitInput) {
+            document.getElementById("celcius").value = (fahrenheitInput.value - 32) / 1.8
+        }
+
+        function convertCelcius(celciusInput) {
+            document.getElementById("output").value = celciusInput.value * 1.8 + 32
+        }
+    </script>
+    <form>
+        <h2 class="temp"> Fahrenheit: </h2>
+        <input type="number" name="Fahrenheit" id="fahrenheit" oninput="convertFahrenheit(this)" />
+        <br>
+        <h2 class="temp"> Celsius: </h2>
+        <input type="number" name="Celcius" id="celcius" oninput="convertCelcius(this)" />
+        <br>
+        <input type="reset" name="reset" value="Reset" />
+    </form>
 </body>
+
 </html>
