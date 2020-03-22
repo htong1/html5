@@ -45,13 +45,13 @@ Conversion Table for Quick Lookup
 </h2>
     <table>
         <tr>
-            <th>Fahrenheit</th>
             <th>Celsius</th>
+            <th>Fahrenheit</th>
         </tr>
         <script>
-            for (let fahrenheitInput = 10; fahrenheitInput < 41; fahrenheitInput++) {
+            for (let celciusInput = 10; celciusInput < 41; celciusInput++) {
                 document.write(
-                    "<tr><td> " + fahrenheitInput + "</td><td> " + ((fahrenheitInput - 32) / 1.8) + "</td></tr>"
+                    "<tr><td> " + celciusInput + "</td><td> " + (celciusInput * 1.8 + 32) + "</td></tr>"
                 )
             }
 
@@ -60,7 +60,7 @@ Conversion Table for Quick Lookup
             }
 
             function convertCelcius(celciusInput) {
-                document.getElementById("output").value = celciusInput.value * 1.8 + 32
+                document.getElementById("output").value = (celciusInput.value * 1.8 + 32)
             }
         </script>
     </table>
