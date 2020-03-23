@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 3px solid red;
+        }
+        
+        h2 {
+            text-align: center;
+            font-family: cursive;
+            color: red;
+            border-width: 10px;
+            border-style: groove;
+            background-color: black;
+        }
+    </style>
+
+    <script>
+        function convert(cInput) {
+            if (isNaN(cInput)) {
+                document.getElementById("result").value = cInput.charCodeAt(0)
+            } else {
+                document.getElementById("result").value = String.fromCharCode(cInput);
+            }
+
+        }
+    </script>
+</head>
+
 <body>
 
-<h2>JavaScript Statements</h2>
-
-<p>
-The best place to break a code line is after an operator or a comma.
-</p>
-
-<p id="demo"></p>
-<table>
-<tr><th>Code</th>
-<th>Char</th>
-</tr>
-<script>
-for(let x=22; x<256;x++){
-document.write(
-"<tr><td> " + x + "</td><td> "+String.fromCharCode(x)+ "</td></tr>"
-)
-}
-</script>
-</table>
+    <h2>Character Converter</h2>
+    <input type="text" name="Char" onchange="convert(this.value)" />
+    <input type="text" id="result" />
+    <p id="demo"></p>
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Char</th>
+        </tr>
+        <script>
+            for (let x = 22; x < 256; x++) {
+                document.write(
+                    "<tr><td> " + x + "</td><td> " + String.fromCharCode(x) + "</td></tr>"
+                )
+            }
+        </script>
+    </table>
 </body>
+
 </html>
