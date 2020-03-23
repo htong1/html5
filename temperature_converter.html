@@ -3,7 +3,7 @@
 
 <head>
     <style>
-        body {
+    body {
             background-color: lightblue
         }
         
@@ -33,10 +33,26 @@
             border-style: groove;
             background-color: black;
         }
+        
+        th {
+            text-align: center;
+            font-family: cursive;
+            color: aqua;
+            border-width: 10px;
+            border-style: groove;
+            background-color: black;
+        }
+        
+        table,
+        th,
+        td {
+            border: 3px solid blue;
+        }
+    }
     </style>
 </head>
 <h1>
-Temperature Converter :)
+Temperature Converter :D
 </h1>
 
 <body>
@@ -49,18 +65,18 @@ Conversion Table for Quick Lookup
             <th>Fahrenheit</th>
         </tr>
         <script>
-            for (let celciusInput = 10; celciusInput < 41; celciusInput++) {
+            for (let celsiusInput = 10; celsiusInput < 41; celsiusInput++) {
                 document.write(
-                    "<tr><td> " + celciusInput + "</td><td> " + (celciusInput * 1.8 + 32) + "</td></tr>"
+                    "<tr><td> " + celsiusInput + "</td><td> " + Math.round(celsiusInput * 1.8 + 32) + "</td></tr>"
                 )
             }
 
             function convertFahrenheit(fahrenheitInput) {
-                document.getElementById("celcius").value = (fahrenheitInput.value - 32) / 1.8
+                document.getElementById("celsius").value = (fahrenheitInput.value - 32) / 1.8
             }
 
-            function convertCelcius(celciusInput) {
-                document.getElementById("output").value = (celciusInput.value * 1.8 + 32)
+            function convertCelsius(celsiusInput) {
+                document.getElementById("output").value = (celsiusInput.value * 1.8 + 32)
             }
         </script>
     </table>
@@ -73,7 +89,7 @@ Conversion Table for Quick Lookup
         <input type="number" name="Fahrenheit" id="fahrenheit" oninput="convertFahrenheit(this)" />
         <br>
         <h2 class="temp"> Celsius: </h2>
-        <input type="number" name="Celcius" id="celcius" oninput="convertCelcius(this)" />
+        <input type="number" name="Celsius" id="celsius" oninput="convertCelsius(this)" />
         <br>
         <input type="reset" name="reset" value="Reset" />
     </form>
