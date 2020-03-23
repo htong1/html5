@@ -3,7 +3,7 @@
 
 <head>
     <style>
-        table,
+            table,
         th,
         td {
             border: 3px solid red;
@@ -17,25 +17,37 @@
             border-style: groove;
             background-color: black;
         }
+        
+        h3 {
+            text-align: center;
+            font-family: cursive;
+            color: red;
+            border-width: 10px;
+            border-style: groove;
+            background-color: black;
     </style>
 
     <script>
         function convert(cInput) {
-            if (isNaN(cInput)) {
-                document.getElementById("result").value = cInput.charCodeAt(0)
-            } else {
-                document.getElementById("result").value = String.fromCharCode(cInput);
-            }
+            document.getElementById("result").value = cInput.charCodeAt(0)
+        }
 
+        function converttwo(coInput) {
+            document.getElementById("resulttwo").value = String.fromCharCode(coInput);
         }
     </script>
 </head>
 
 <body>
-
     <h2>Character Converter</h2>
+    <h3>Converts Character to Number</h3>
     <input type="text" name="Char" onchange="convert(this.value)" />
     <input type="text" id="result" />
+    <br>
+    <h3>Converts Number to Character</h3>
+    <input type="text" name="Code" onchange="converttwo(this.value)" />
+    <input type="text" id="resulttwo" />
+    <br>
     <p id="demo"></p>
     <table>
         <tr>
