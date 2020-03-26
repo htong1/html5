@@ -28,11 +28,16 @@
     </style>
 
     <script>
-        function fromNumber(cInput) {
-            document.getElementById("result").value = cInput.charCodeAt(0)
+        function fromChar(cInput) {
+            let nums = "";
+            for (let h = 0; h < cInput.length; h++) {
+                nums = nums += cInput.charCodeAt(h) + ",";
+            }
+            nums.slice(0, num.length - 1)
+            document.getElementById("result").value = nums
         }
 
-        function fromChar(coInput) {
+        function fromNumber(coInput) {
             document.getElementById("resulttwo").value = String.fromCharCode(coInput);
         }
     </script>
@@ -41,11 +46,11 @@
 <body>
     <h2>Character Converter</h2>
     <h3>Converts Character to Number</h3>
-    <input type="text" name="Char" onchange="fromNumber(this.value)" />
+    <input type="text" name="Char" onchange="fromChar(this.value)" />
     <input type="text" id="result" />
     <br>
     <h3>Converts Number to Character</h3>
-    <input type="text" name="Code" onchange="fromChar(this.value)" />
+    <input type="text" name="Code" onchange="fromNumber(this.value)" />
     <input type="text" id="resulttwo" />
     <br>
     <p id="demo"></p>
