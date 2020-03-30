@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function isOdd() {
+            let num = document.getElementById("num").value
+            if (num % 2 === 0) {
+                document.getElementById("result").innerText = "It is not odd!!!!"
+            } else {
+                document.getElementById("result").innerText = "It's odd!!!"
+            }
+        }
+
+        function isPS()
+    </script>
+    <h1>Fun with Numbers</h1>
+    <p>Please enter a number:
+        <input type=n umber id="num">
+    </p>
+    <button type=b utton onclick="isOdd()"> is odd? </button>
+    <button type=b utton onclick="isPS()"> is perfect square? </button>
+    <p>
+        <output id="result" />
+</body>
+
+</html>
