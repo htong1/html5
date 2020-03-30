@@ -31,14 +31,15 @@
         function fromChar(cInput) {
             let nums = "";
             for (let h = 0; h < cInput.length; h++) {
-                nums = nums += cInput.charCodeAt(h) + ",";
+                nums += cInput.charCodeAt(h) + ",";
             }
-            nums.slice(0, num.length - 1)
+            nums = nums.slice(0, nums.length - 1)
             document.getElementById("result").value = nums
         }
 
         function fromNumber(coInput) {
-            document.getElementById("resulttwo").value = String.fromCharCode(coInput);
+            let numbers = coInput.split(",");
+            document.getElementById("resulttwo").value = String.fromCharCode(...numbers);
         }
     </script>
 </head>
