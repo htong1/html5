@@ -17,7 +17,7 @@
 
         function isPerfectSquare() {
             let num = document.getElementById("num").value
-            for (let n = 1; n < 1000; n++) {
+            for (let n = 1; n <= num / 2; n++) {
                 if (n * n == num) {
                     document.getElementById("result").innerText = "It is a perfect square!!!!";
                     break;
@@ -27,6 +27,24 @@
 
             }
         }
+
+        function factorize() {
+            let num = document.getElementById("num").value
+            let factors = [];
+            for (let f = 2; f <= num; f++) {
+                if (num % f === 0) {
+                    factors.push(f)
+                }
+            }
+            document.getElementById("result").innerText = "These are the prime factors of the number:" + factors
+        }
+
+        function pFactor() {
+            let num = document.getElementById("num").value
+            let pFactors = [];
+            for (let v = 2; v <= num; v++)
+                let newNum = num / 2
+        }
     </script>
     <h1>Fun with Numbers</h1>
     <p>Please enter a number:
@@ -34,6 +52,8 @@
     </p>
     <button onclick="isOdd()"> is odd? </button>
     <button onclick="isPerfectSquare()"> is perfect square? </button>
+    <button onclick="factorize()"> Factorize!! </button>
+    <button onclick="pFactors()"> Prime Factors </button>
     <p>
         <output id="result" />
 
