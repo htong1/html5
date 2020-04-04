@@ -15,16 +15,28 @@
             }
         }
 
-        function isPS()
+        function isPerfectSquare() {
+            let num = document.getElementById("num").value
+            for (let n = 1; n < 1000; n++) {
+                if (n * n == num) {
+                    document.getElementById("result").innerText = "It is a perfect square!!!!";
+                    break;
+
+                }
+                document.getElementById("result").innerText = "It is not a perfect square."
+
+            }
+        }
     </script>
     <h1>Fun with Numbers</h1>
     <p>Please enter a number:
-        <input type=n umber id="num">
+        <input type="number" id="num">
     </p>
-    <button type=b utton onclick="isOdd()"> is odd? </button>
-    <button type=b utton onclick="isPS()"> is perfect square? </button>
+    <button onclick="isOdd()"> is odd? </button>
+    <button onclick="isPerfectSquare()"> is perfect square? </button>
     <p>
         <output id="result" />
+
 </body>
 
 </html>
