@@ -2,70 +2,71 @@
 <html>
 
 <head>
-    <style>
-    body {
-            background-color: lightblue
-        }
-        
-        h1 {
-            text-align: center;
-            font-family: cursive;
-            color: aqua;
-            border-width: 10px;
-            border-style: groove;
-            background-color: black;
-        }
-        
-        h2 {
-            text-align: center;
-            font-family: cursive;
-            color: aqua;
-            border-width: 10px;
-            border-style: groove;
-            background-color: black;
-        }
-        
-        .temp {
-            text-align: center;
-            font-family: cursive;
-            color: aqua;
-            border-width: 10px;
-            border-style: groove;
-            background-color: black;
-        }
-        
-        th {
-            text-align: center;
-            font-family: cursive;
-            color: aqua;
-            border-width: 10px;
-            border-style: groove;
-            background-color: black;
-        }
-        
-        table,
-        th,
-        td {
-            border: 3px solid blue;
-        }
-    }
-    </style>
+	<style>
+		body {
+			background-color: lightblue
+		}
+
+		h1 {
+			text-align: center;
+			font-family: cursive;
+			color: aqua;
+			border-width: 10px;
+			border-style: groove;
+			background-color: black;
+		}
+
+		h2 {
+			text-align: center;
+			font-family: cursive;
+			color: aqua;
+			border-width: 10px;
+			border-style: groove;
+			background-color: black;
+		}
+
+		.temp {
+			text-align: center;
+			font-family: cursive;
+			color: aqua;
+			border-width: 10px;
+			border-style: groove;
+			background-color: black;
+		}
+
+		th {
+			text-align: center;
+			font-family: cursive;
+			color: aqua;
+			border-width: 10px;
+			border-style: groove;
+			background-color: black;
+		}
+
+		table,
+		th,
+		td {
+			border: 3px solid blue;
+		}
+
+		}
+	</style>
 </head>
 <h1>
-Temperature Converter :D
+	Temperature Converter :D
 </h1>
 
 <body>
-    <h2>
-Conversion Table for Quick Lookup
-</h2>
-    <table>
-        <tr>
-            <th>Celsius</th>
-            <th>Fahrenheit</th>
-        </tr>
-        <script>
-            for (let celsiusInput = 10; celsiusInput < 41; celsiusInput++) {
+	<h2>
+		Conversion Table for Quick Lookup
+	</h2>
+	<table>
+		<tr>
+			<th>Celsius</th>
+			<th>Fahrenheit</th>
+		</tr>
+		<script>
+			for (let celsiusInput = 10; celsiusInput < 41; celsiusInput++) {
                 document.write(
                     "<tr><td> " + celsiusInput + "</td><td> " + Math.round(celsiusInput * 1.8 + 32) + "</td></tr>"
                 )
@@ -78,15 +79,15 @@ Conversion Table for Quick Lookup
             function convertCelsius(celsiusInput) {
                 document.getElementById("output").value = (celsiusInput.value * 1.8 + 32)
             }
-        </script>
-    </table>
-    <form>
-        <h2>
-        Converter for Conversions Not Found in the Table
-        </h2>
+		</script>
+	</table>
+	<form>
+		<h2>
+			Converter for Conversions Not Found in the Table
+		</h2>
 
-        <h2 class="temp"> Fahrenheit: </h2>
-        <input type="number" name="Fahrenheit" id="fahrenheit" oninput="convertFahrenheit(this)" />
+		<h2 class="temp"> Fahrenheit: </h2>
+		<input type="number" name="Fahrenheit" id="fahrenheit" oninput="convertFahrenheit(this)" />
         <br>
         <h2 class="temp"> Celsius: </h2>
         <input type="number" name="Celsius" id="celsius" oninput="convertCelsius(this)" />
