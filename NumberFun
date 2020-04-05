@@ -36,14 +36,21 @@
                     factors.push(f)
                 }
             }
-            document.getElementById("result").innerText = "These are the prime factors of the number:" + factors
+            document.getElementById("result").innerText = "These are the  factors of the number:" + factors
         }
 
         function pFactor() {
             let num = document.getElementById("num").value
-            let pFactors = [];
-            for (let v = 2; v <= num; v++)
-                let newNum = num / 2
+            let pF = [];
+            for (let v = 2; v <= num; v++) {
+                debugger;
+                while (num % v === 0) {
+                    num = num / v;
+                    pF.push(v);
+                }
+
+            }
+            document.getElementById("result").innerText = "These are the prime factors that multiply to your number:" + pF
         }
     </script>
     <h1>Fun with Numbers</h1>
@@ -53,7 +60,7 @@
     <button onclick="isOdd()"> is odd? </button>
     <button onclick="isPerfectSquare()"> is perfect square? </button>
     <button onclick="factorize()"> Factorize!! </button>
-    <button onclick="pFactors()"> Prime Factors </button>
+    <button onclick="pFactor()"> Prime Factors </button>
     <p>
         <output id="result" />
 
