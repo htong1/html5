@@ -37,6 +37,7 @@
                 }
             }
             document.getElementById("result").innerText = "These are the  factors of the number:" + factors
+            return factors;
         }
 
         function pFactor() {
@@ -54,16 +55,27 @@
 
             }
             document.getElementById("result").innerText = "These are the prime factors that multiply to your number:" + pF
+            
+        }
+
+        function isPrime() {
+        let factors = factorize()
+        if (factors.length === 1 && pF[0] !== 2) {
+        document.getElementById("result").innerText = "It is a prime number!"}
+        else {
+        document.getElementById("result").innerText = "It is not a prime number!"
+        }
         }
 	</script>
 	<h1>Fun with Numbers</h1>
 	<p>Please enter a number:
 		<input type="number" id="num">
     </p>
-    <button onclick="isOdd()"> is odd? </button>
-    <button onclick="isPerfectSquare()"> is perfect square? </button>
+    <button onclick="isOdd()"> Is Odd? </button>
+    <button onclick="isPerfectSquare()"> Is Perfect Square? </button>
     <button onclick="factorize()"> Factorize!! </button>
     <button onclick="pFactor()"> Prime Factors </button>
+    <button onclick="isPrime()"> Is Prime? </button>
     <p>
         <output id="result" />
 
