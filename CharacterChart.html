@@ -2,33 +2,33 @@
 <html>
 
 <head>
-    <style>
-            table,
-        th,
-        td {
-            border: 3px solid red;
-        }
-        
-        h2 {
-            text-align: center;
-            font-family: cursive;
-            color: red;
-            border-width: 10px;
-            border-style: groove;
-            background-color: black;
-        }
-        
-        h3 {
-            text-align: center;
-            font-family: cursive;
-            color: red;
-            border-width: 10px;
-            border-style: groove;
-            background-color: black;
-    </style>
+	<style>
+		table,
+		th,
+		td {
+			border: 3px solid red;
+		}
 
-    <script>
-        function fromChar(cInput) {
+		h2 {
+			text-align: center;
+			font-family: cursive;
+			color: red;
+			border-width: 10px;
+			border-style: groove;
+			background-color: black;
+		}
+
+		h3 {
+			text-align: center;
+			font-family: cursive;
+			color: red;
+			border-width: 10px;
+			border-style: groove;
+			background-color: black;
+	</style>
+
+	<script>
+		function fromChar(cInput) {
             let nums = "";
             for (let h = 0; h < cInput.length; h++) {
                 nums += cInput.charCodeAt(h) + ",";
@@ -41,13 +41,13 @@
             let numbers = coInput.split(",");
             document.getElementById("resulttwo").value = String.fromCharCode(...numbers);
         }
-    </script>
+	</script>
 </head>
 
 <body>
-    <h2>Character Converter</h2>
-    <h3>Converts Character to Number</h3>
-    <input type="text" name="Char" onchange="fromChar(this.value)" />
+	<h2>Character Converter</h2>
+	<h3>Converts Character to Number</h3>
+	<input type="text" name="Char" onchange="fromChar(this.value)" />
     <input type="text" id="result" />
     <br>
     <h3>Converts Number to Character</h3>

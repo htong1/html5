@@ -5,8 +5,8 @@
 </head>
 
 <body>
-    <script>
-        function isOdd() {
+	<script>
+		function isOdd() {
             let num = document.getElementById("num").value
             if (num % 2 === 0) {
                 document.getElementById("result").innerText = "It is not odd!!!!"
@@ -33,7 +33,7 @@
             let factors = [];
             for (let f = 2; f <= num; f++) {
                 if (num % f === 0) {
-                    factors.push(f)
+                  factors.push(f)
                 }
             }
             document.getElementById("result").innerText = "These are the  factors of the number:" + factors
@@ -46,16 +46,19 @@
                 debugger;
                 while (num % v === 0) {
                     num = num / v;
+                   if (v !== pF[pF.length - 1]){
                     pF.push(v);
+                   }
+                
                 }
 
             }
             document.getElementById("result").innerText = "These are the prime factors that multiply to your number:" + pF
         }
-    </script>
-    <h1>Fun with Numbers</h1>
-    <p>Please enter a number:
-        <input type="number" id="num">
+	</script>
+	<h1>Fun with Numbers</h1>
+	<p>Please enter a number:
+		<input type="number" id="num">
     </p>
     <button onclick="isOdd()"> is odd? </button>
     <button onclick="isPerfectSquare()"> is perfect square? </button>
