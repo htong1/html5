@@ -63,11 +63,11 @@
         if (factors.length === 1 && pF[0] !== 2) {
         document.getElementById("result").innerText = "It is a prime number!"}
         else {
-        document.getElementById("result").innerText = "It is not a prime number!"
+         document.getElementById("result").innerText = "It is not a prime number!"
         }
         }
 	</script>
-	<h1>Fun with Numbers</h1>
+	<h1>Fun with Numbers :D</h1>
 	<p>Please enter a number:
 		<input type="number" id="num">
     </p>
@@ -76,9 +76,24 @@
     <button onclick="factorize()"> Factorize!! </button>
     <button onclick="pFactor()"> Prime Factors </button>
     <button onclick="isPrime()"> Is Prime? </button>
+    
     <p>
         <output id="result" />
-
+        
+    <h2>How to Calculate Pi</h2>
+    <p> Let's learn how to calculate Pi. We will use the Nilankantha Series to calculate Pi. The formula: 3 + 4/2*3*4 - 4/4*5*6 + 4/ 6*7*8... Click the button below for Pi. </p>
+    <button onclick="Pi()"> Pi </button>
+    <output id ="piResult" />
+    <script>
+      function Pi() {
+      let  pi = 3;
+      for (let d = 1, sign = 1; d < 10000; d++) {
+      pi += ((4 / (d*2 * (d*2+1) * (d*2+2)))) * sign
+      sign = -sign
+      }
+      document.getElementById("piResult").innerText = pi
+      }
+    </script>
 </body>
 
 </html>
