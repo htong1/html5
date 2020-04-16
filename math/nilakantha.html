@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>
+	Nilakantha Series
+</title>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="https://www.mathsisfun.com/style3.css" />
+</head>
+
+<body>
+	<h3>Calculating Pi:D</h3>
+	<p>There are many special methods used to calculate <span class="pi">&pi;</span> and here is one you can try yourself: it is called the <b>Nilakantha series</b> (after an Indian mathematician who lived in the years 1444–1544). </p>
+<p>It goes on for ever and has this pattern:</p>
+<p class="center larger">3 + <span class="intbl">
+<em>4</em>
+<strong>2&times;3&times;4</strong>
+</span> &minus; <span class="intbl">
+<em>4</em>
+<strong>4&times;5&times;6</strong>
+</span> + <span class="intbl">
+<em>4</em>
+<strong>6&times;7&times;8</strong>
+</span> &minus; <span class="intbl">
+<em>4</em>
+<strong>8&times;9&times;10</strong>
+</span> + ...</p>
+     <p>
+<script>
+let pi  = 3;
+let d = 1;
+let sign = -1;
+function nTerm() {
+let term = (4/((d*2) * (d*2+1) * (d*2+2))) 
+sign = -sign
+document.getElementById("nTermResult").innerText = term*sign;
+d++
+pi+=term*sign
+document.getElementById("newPi").innerText = pi
+}
+</script>
+     <p>
+     <button type=button onclick = "nTerm()"> Next Term </button>
+     <span id = "nTermResult"> </span>
+     <br>
+     Updated PI: <span id = "newPi">3</span
+     </p>
+
+</body>
+</html>
