@@ -5,8 +5,8 @@
 </head>
 
 <body>
-	<script>
-		function isOdd() {
+    <script>
+        function isOdd() {
             let num = document.getElementById("num").value
             if (num % 2 === 0) {
                 document.getElementById("result").innerText = "It is not odd!!!!"
@@ -27,20 +27,20 @@
 
             }
         }
-        
-        const factor = function(num){
-         let factors = [];
+
+        const factor = function(num) {
+            let factors = [];
             for (let f = 2; f <= num; f++) {
                 if (num % f === 0) {
-                  factors.push(f)
+                    factors.push(f)
                 }
             }
-          return factors;
+            return factors;
         }
 
         function factorize() {
             let num = document.getElementById("num").value
-            
+
             document.getElementById("result").innerText = "These are the  factors of the number:" + factor(num)
         }
 
@@ -51,30 +51,30 @@
                 debugger;
                 while (num % v === 0) {
                     num = num / v;
-                   if (v !== pF[pF.length - 1]){
-                    pF.push(v);
-                   }
-                
+                    if (v !== pF[pF.length - 1]) {
+                        pF.push(v);
+                    }
+
                 }
 
             }
             document.getElementById("result").innerText = "These are the prime factors that when multiplied, te produce is your number:" + pF
-            
+
         }
-      
 
         function isPrime() {
-        let factors = factorize()
-        if (factors.length === 1 && pF[0] !== 2) {
-        document.getElementById("result").innerText = "It is a prime number!"}
-        else {
-         document.getElementById("result").innerText = "It is not a prime number!"
+            let num = document.getElementById("num").value
+            let factors = factor(num)
+            if (factors.length === 1 && factors[0] !== 2) {
+                document.getElementById("result").innerText = "It is a prime number!"
+            } else {
+                document.getElementById("result").innerText = "It is not a prime number!"
+            }
         }
-        }
-	</script>
-	<h1>Fun with Numbers :D</h1>
-	<p>Please enter a number:
-		<input type="number" id="num">
+    </script>
+    <h1>Fun with Numbers :D</h1>
+    <p>Please enter a number:
+        <input type="number" id="num">
     </p>
     <button onclick="isOdd()"> Is Odd? </button>
     <button onclick="isPerfectSquare()"> Is Perfect Square? </button>
@@ -82,74 +82,77 @@
     <button onclick="pFactor()"> Prime Factors </button>
     <button onclick="isPrime()"> Is Prime? </button>
     <br>
-     <span id="result"> </span>
-        
+    <span id="result"> </span>
+
     <h2>How to Calculate Pi</h2>
     <p> Let's learn how to calculate Pi. We will use the Nilankantha Series (after an Indian mathematician who lived in the years 1444-1544) to calculate Pi. The formula: 3 + 4/2*3*4 - 4/4*5*6 + 4/ 6*7*8... Click the button below for Pi. </p>
     <button onclick="Pi()"> Pi </button>
-    <output id ="piResult" />
-    
-       <h2> Let's now have fun with two numbers! :)</h2>
+    <output id="piResult" />
+
+    <h2> Let's now have fun with two numbers! :)</h2>
     <p>Please enter a number in each box.</p>
     <input type="number" id="num2">
-      <span id="result2"> </span>
+    <span id="result2"> </span>
     <input type="number" id="num3">
     <p>
-    <button onclick="compare()"> <,> or = ? </button>
-    <button onclick="gcd()"> GCD </button>
-    <div id = "result3" >
-    <p>
+        <button onclick="compare()">
+            <,> or = ? </button>
+        <button onclick="gcd()"> GCD </button>
+        <button onclick="lcm()"> LCM </button>
+        <div id="result3"></div>
+        <p>
 
-      <script>
-      function compare() {
-        let num2 = 1 * document.getElementById("num2").value
-        let num3 = 1 * document.getElementById("num3").value
-        debugger;
-        if (num2 < num3) {
-         document.getElementById("result2").innerText = "<" 
-        } else {
-        document.getElementById("result2").innerText = ">" 
-        }
-        if (num2 === num3) {
-        document.getElementById("result2").innerText = "="  
-        }
-        }
-      
-      function gcd() {
-      let num2 = 1 * document.getElementById("num2").value;
-      let num3 = 1 * document.getElementById("num3").value;
-      let fAA = factor(num2)
-      let fAB = factor(num3)
-      debugger;
-      let gcd = 1
-      for (;fAA.length>0 && fAB.length>0;) {
-      if (fAA[fAA.length-1]<fAB[fAB.length-1]){
-      fAB.pop()
-      continue;
-      }
-      if (fAA[fAA.length-1]>fAB[fAB.length-1]){
-      fAA.pop()
-      continue;
-      }
-      if (fAA[fAA.length-1]===fAB[fAB.length-1]){
-      }
-      document.getElementById("result3").innerText =  "This is the greatest common divisor or factor of these two numbers:" + fAA[fAA.length-1]
-        break;
-      }
-      }
-      
-      </script>
-    
-    <script>
-      function Pi() {
-      let  pi = 3;
-      for (let d = 1, sign = 1; d < 10000; d++) {
-      pi += ((4 / (d*2 * (d*2+1) * (d*2+2)))) * sign
-      sign = -sign
-      }
-      document.getElementById("piResult").innerText = pi
-      }
-    </script>
+          <script>
+                function compare() {
+                    let num2 = 1 * document.getElementById("num2").value
+                    let num3 = 1 * document.getElementById("num3").value
+                    debugger;
+                    if (num2 < num3) {
+                        document.getElementById("result2").innerText = "<"
+                    } else {
+                        document.getElementById("result2").innerText = ">"
+                    }
+                    if (num2 === num3) {
+                        document.getElementById("result2").innerText = "="
+                    }
+                }
+
+                const getGCD = function(num2, num3) {
+                    let cdmax = 1;
+                    for (let fAA = factor(num2), fAB = factor(num3); fAA.length > 0 && fAB.length > 0;) {
+                        if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
+
+                            cdmax = fAA[fAA.length - 1]
+                            return cdmax;
+                        }
+                        if (fAA[fAA.length - 1] < fAB[fAB.length - 1]) {
+                            fAB.pop()
+
+                        } else {
+                            fAA.pop()
+
+                        }
+
+                    }
+                }
+
+                function gcd() {
+                    let num2 = 1 * document.getElementById("num2").value;
+                    let num3 = 1 * document.getElementById("num3").value;
+                    document.getElementById("result3").innerText = "This is the greatest common divisor or factor of these two numbers:" + getGCD(num2, num3)
+                }
+            </script>
+
+            <script>
+                function Pi() {
+                    let pi = 3;
+                    for (let d = 1, sign = 1; d < 10000; d++) {
+                        pi += ((4 / (d * 2 * (d * 2 + 1) * (d * 2 + 2)))) * sign
+                        sign = -sign
+                    }
+                    document.getElementById("piResult").innerText = pi
+                }
+            </script>
 </body>
 
 </html>
