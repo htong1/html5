@@ -98,11 +98,12 @@
         <button onclick="compare()">
             <,> or = ? </button>
         <button onclick="gcd()"> GCD </button>
+        <button onclick="Euclid()"> EuclidGCD </button>
         <button onclick="lcm()"> LCM </button>
         <div id="result3"></div>
         <p>
 
-          <script>
+            <script>
                 function compare() {
                     let num2 = 1 * document.getElementById("num2").value
                     let num3 = 1 * document.getElementById("num3").value
@@ -140,6 +141,22 @@
                     let num2 = 1 * document.getElementById("num2").value;
                     let num3 = 1 * document.getElementById("num3").value;
                     document.getElementById("result3").innerText = "This is the greatest common divisor or factor of these two numbers:" + getGCD(num2, num3)
+                }
+
+                const EGCD = function(A, B) {
+                    if (A * B === 0) {
+                        return A + B;
+                    }
+                    if (A < B) {
+                        [A, B] = [B, A]
+                    }
+                    return EGCD(B, A % B)
+                }
+
+                function Euclid() {
+                    let A = 1 * document.getElementById("num2").value;
+                    let B = 1 * document.getElementById("num3").value;
+                    document.getElementById("result3").innerText = EGCD(A, B)
                 }
             </script>
 
