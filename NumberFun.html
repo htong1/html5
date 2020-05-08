@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <script src = "math//numbers.js">
+
+  </script>
 </head>
 
 <body>
@@ -28,16 +31,7 @@
             }
         }
 
-        const factor = function(num) {
-            let factors = [];
-            for (let f = 2; f <= num; f++) {
-                if (num % f === 0) {
-                    factors.push(f)
-                }
-            }
-            return factors;
-        }
-
+       
         function factorize() {
             let num = document.getElementById("num").value
 
@@ -99,7 +93,7 @@
             <,> or = ? </button>
         <button onclick="gcd()"> GCD </button>
         <button onclick="Euclid()"> EuclidGCD </button>
-        <button onclick="lcm()"> LCM </button>
+        <button onclick="getLcm()"> LCM </button>
         <div id="result3"></div>
         <p>
 
@@ -118,46 +112,28 @@
                     }
                 }
 
-                const getGCD = function(num2, num3) {
-                    let cdmax = 1;
-                    for (let fAA = factor(num2), fAB = factor(num3); fAA.length > 0 && fAB.length > 0;) {
-                        if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
-
-                            cdmax = fAA[fAA.length - 1]
-                            return cdmax;
-                        }
-                        if (fAA[fAA.length - 1] < fAB[fAB.length - 1]) {
-                            fAB.pop()
-
-                        } else {
-                            fAA.pop()
-
-                        }
-
-                    }
-                }
-
+              
                 function gcd() {
                     let num2 = 1 * document.getElementById("num2").value;
                     let num3 = 1 * document.getElementById("num3").value;
                     document.getElementById("result3").innerText = "This is the greatest common divisor or factor of these two numbers:" + getGCD(num2, num3)
                 }
 
-                const EGCD = function(A, B) {
-                    if (A * B === 0) {
-                        return A + B;
-                    }
-                    if (A < B) {
-                        [A, B] = [B, A]
-                    }
-                    return EGCD(B, A % B)
-                }
-
+                
                 function Euclid() {
                     let A = 1 * document.getElementById("num2").value;
                     let B = 1 * document.getElementById("num3").value;
                     document.getElementById("result3").innerText = EGCD(A, B)
                 }
+
+                function getLcm() {
+                let A = 1 * document.getElementById("num2").value;
+                let B = 1 * document.getElementById("num3").value;
+                
+                document.getElementById("result3").innerText = LCM(A,B);
+                }
+
+                
             </script>
 
             <script>
