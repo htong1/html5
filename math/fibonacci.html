@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src = "fibonacci.js">
+    </script>
+</head>
+<body>
+<h1> Fibonacci Numbers!!</h1>
+<img src = "https://images.ctfassets.net/d7jrd3vkrjh8/5xLzWCnqaBFx6QUpvhuRhg/5c2a123771664463122cb0f8005e06de/fibonacci-initial-numbers-calculation.svg">
+<p>
+<button type = "button" onclick = "nextNum()"> Next Number --&gt; </button> 
+The next number in the sequence: <div id = "next"> </div>
+<p>
+<button type = "button" onclick = "shrinkSeq()">  &lt;--Shrink Sequence </button>
+
+<button type = "button" onclick = "growSeq()">  Grow Sequence--&gt;  </button>
+<div id = "sequence"> </div>
+
+
+<script>
+document.getElementById("sequence").innerText = fib.sequence
+
+function nextNum(){
+document.getElementById("next").innerText = fib.nextNum()
+
+} 
+</script>
+
+</body>
+</html>
