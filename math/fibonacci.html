@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src = "fibonacci.js">
-    </script>
-</head>
-<body>
-<h1> Fibonacci Numbers!!</h1>
-<img src = "https://images.ctfassets.net/d7jrd3vkrjh8/5xLzWCnqaBFx6QUpvhuRhg/5c2a123771664463122cb0f8005e06de/fibonacci-initial-numbers-calculation.svg">
-<p>
+    <head>
+        <script src="fibonacci.js"></script>
+    </head>
 
-The next number in the sequence: <div id = "next"> </div>
-<p>
-<button type = "button" onclick = "shrinkSeq()">  &lt;--Shrink Sequence </button>
+    <body>
+        <h1>Fibonacci Numbers!! :D</h1>
+        <img src="https://images.ctfassets.net/d7jrd3vkrjh8/5xLzWCnqaBFx6QUpvhuRhg/5c2a123771664463122cb0f8005e06de/fibonacci-initial-numbers-calculation.svg" />
+        <p>
+            <button type="button" onclick="shrinkSeq()">&lt;--Shrink Sequence</button>
 
-<button type = "button" onclick = "growSeq()">  Grow Sequence--&gt;  </button>
-<div id = "sequence"> </div>
+            <button type="button" onclick="growSeq()">Grow Sequence--&gt;</button>
+        </p>
 
+        <p>
+            <button type="button" onclick="gDown()">Grow Down v</button>
+            <button type="button" onclick="sUp()">Shrink Up ^</button>
+        </p>
 
-<script>
-document.getElementById("sequence").innerText = fib.sequence
+        <p></p>
+        <p>The sequence:</p>
+        <div id="sequence"></div>
+        <p></p>
+        <div id="fancySequence"></div>
+        <p>
+            The formula to calculating the next number in the sequence:
+        </p>
+        <div id="next"></div>
 
-function nextNum(){
-document.getElementById("next").innerText = fib.nextNum()
-} 
+        <h1>Golden Ratio ;D</h1>
+        <p>This section is all about the Golden Ratio! The Golden Ratio is calculated by dividing the last number it the sequence by the second to last number. By furter expanding the sequence, your Golden Ratio will be more accurate!</p>
+        <button type="button" onclick="gRatio()">Golden Ratio</button>
+        <p>
+            This is the Golden Ratio:
+        </p>
+        <div id="gRatio"></div>
 
-function growSeq(){
-fib.grow()
-document.getElementById("next").innerText = fib.nextNum()
-document.getElementById("sequence").innerText = fib.sequence
-}
-</script>
-</body>
+        <script>
+            function nextNum() {
+                document.getElementById("next").innerText = fib.nextNum();
+            }
+
+            function growSeq() {
+                fancySeq();
+                fib.grow();
+                document.getElementById("next").innerText = fib.nextNum();
+            }
+
+            function shrinkSeq() {
+                fancySeq();
+                fib.shrink();
+                document.getElementById("next").innerText = fib.lastNum();
+            }
+
+            function gDown() {
+                fancySeq();
+                fib.growDown();
+            }
+
+            function sUp() {
+                fancySeq();
+                fib.shrinkUp();
+            }
+
+            function gRatio() {
+                document.getElementById("gRatio").innerText = fib.goldenRatio();
+            }
+            function fancySeq() {
+                let html = "";
+                for (let s = 0; s < fib.sequence.length; s++) {
+                    html += ` <span style="color:black;background-color:${fib.sequence[s] % 2 === 0 ? "red" : "DeepSkyBlue"};font-size:120%;" title=${fib.sequence[s - 1] + "+" + fib.sequence[s - 2]}>${fib.sequence[s]}</span>`;
+                }
+                document.getElementById("fancySequence").innerHTML = html;
+            }
+        </script>
+    </body>
 </html>

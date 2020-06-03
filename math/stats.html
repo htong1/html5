@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<title>
+</title>
+
+<head>
+ <script src="stats.js"></script>
+	<script>
+	let scores = []
+	function getScores(){
+  scores = []
+  for(let h = 1; h < 31; h++) {
+  scores.push(Math.round(40 + (Math.random()*100)/(1+2/3)))}
+  document.getElementById("Scores").value = scores
+}
+
+function getMax(){
+document.getElementById("results").innerHTML = "The highest score is: " + max(scores)
+}
+
+function getMin(){
+document.getElementById("results").innerHTML = "The lowest score is: " + min(scores)
+}
+
+function getRange(){
+document.getElementById("results").innerHTML = "The range of the data set is: " + range(scores)
+}
+
+function getMean(){
+document.getElementById("results").innerHTML = "The mean of the data set is : " + mean(scores) 
+}
+
+function getMedian(){
+document.getElementById("results").innerHTML = "The median of the data set is : " + median(scores)  
+}
+
+function getSort(){
+document.getElementById("Scores").value = sort(scores) 
+}
+
+	</script>
+</head>
+
+<body>
+
+	<h1>Statistics :D</h1>
+	<p>
+		<button type = "button" onclick = "getScores()"> Generate Scores </button>
+<br>
+<br>
+<textarea rows="5" cols="50" id="Scores"> </textarea>
+<br>
+<br>
+<button type = "button" onclick = "getMean()"> Mean Score </button>
+<button type = "button" onclick = "getMedian()"> Median Score </button>
+<button type = "button" onclick = "getRange()">Range Score</button>
+<button type = "button" onclick = "getSort()">Sort</button>
+<br>
+<br>
+<button type = "button" onclick = "getMax()"> Maximum Score </button>
+<button type = "button" onclick = "getMin()"> Minimum Score</button>
+<button type = "button" onclick = "getIQR()"> Interquartile Range</button>
+</p>
+Results: <div id = "results"> </div>
+<br>
+<br>
+<button type = "button" onclick = "convert()"> Convert to Letter Grades> </button>
+<br>
+<br>
+<textarea rows="6" cols="60" id="Letter Grades"> </textarea>
+<br>
+<br>
+<button type = "button" onclick = "mode()"> Mode Score </button>
+</body>
+</html>
