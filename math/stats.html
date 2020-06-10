@@ -4,40 +4,52 @@
 </title>
 
 <head>
- <script src="stats.js"></script>
+	<script src="stats.js">
+
+	</script>
 	<script>
-	let scores = []
+		let scores = []
 	function getScores(){
   scores = []
-  for(let h = 1; h < 31; h++) {
-  scores.push(Math.round(40 + (Math.random()*100)/(1+2/3)))}
-  document.getElementById("Scores").value = scores
+  for(let h = 1; h < 32; h++) {
+  scores.push(Math.round(50 + (Math.random()*50)))
+  }
+  document.getElementById("Scores").value = scores;
 }
 
 function getMax(){
-document.getElementById("results").innerHTML = "The highest score is: " + max(scores)
+document.getElementById("results").innerHTML = "The highest score is: " + max(scores);
 }
 
 function getMin(){
-document.getElementById("results").innerHTML = "The lowest score is: " + min(scores)
+document.getElementById("results").innerHTML = "The lowest score is: " + min(scores);
 }
 
 function getRange(){
-document.getElementById("results").innerHTML = "The range of the data set is: " + range(scores)
+document.getElementById("results").innerHTML = "The range of the data set is: " + range(scores);
 }
 
 function getMean(){
-document.getElementById("results").innerHTML = "The mean of the data set is : " + mean(scores) 
+document.getElementById("results").innerHTML = "The mean of the data set is : " + mean(scores);
 }
 
 function getMedian(){
-document.getElementById("results").innerHTML = "The median of the data set is : " + median(scores)  
+document.getElementById("results").innerHTML = "The median of the data set is : " + median(scores);
 }
 
 function getSort(){
-document.getElementById("Scores").value = sort(scores) 
+document.getElementById("Scores").value = sort(scores);
 }
 
+function convert(){
+document.getElementById("Letter").value = sort(scores.map(getGrade));
+}
+
+function firstMode(){ document.getElementById("mode").innerHTML = mode(sort(scores.map(getGrade))) }
+
+function getMode(){
+document.getElementById("anotherMode").innerHTML = modeO(sort(scores.map(getGrade))) 
+}
 	</script>
 </head>
 
@@ -64,12 +76,17 @@ document.getElementById("Scores").value = sort(scores)
 Results: <div id = "results"> </div>
 <br>
 <br>
-<button type = "button" onclick = "convert()"> Convert to Letter Grades> </button>
+<button type = "button" onclick = "convert()"> Convert to Letter Grades </button>
 <br>
 <br>
-<textarea rows="6" cols="60" id="Letter Grades"> </textarea>
+<textarea rows="6" cols="60" id="Letter"> </textarea>
 <br>
 <br>
-<button type = "button" onclick = "mode()"> Mode Score </button>
+<button type = "button" onclick = "firstMode()"> Mode Score </button>
+<button type = "button" onclick = "getMode()">  Also Mode Score </button>
+<br>
+<br>
+The mode of the scores is: <div id = "mode"> </div>
+Another display of mode: <div id = "anotherMode"> </div>
 </body>
 </html>

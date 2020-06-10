@@ -67,7 +67,45 @@ const sort = function (numbers) {
   return numbers;
 }
 
-const IQR = function (numbers) {
-let s = numbers.sort() 
+const getGrade = (score) => score < 60 ? "F" : score < 70 ? "D" : score < 80 ? "C" : score < 90 ? "B" : "A";
 
+const mode = function (grades) {
+  let modeGrade = grades[0];
+  let maxCount = 1;
+  let currentCount = 1;
+  let currentEl = grades[0];
+  for (let p = 1; p < grades.length; p++) {
+    if (grades[p - 1] !== grades[p]) {
+      if (currentCount > maxCount) {
+        maxCount = currentCount;
+        modeGrade = currentEl;
+      }
+
+      currentCount = 0;
+      currentEl = grades[p];
+    }
+    currentCount++;
+  }
+
+  return (currentCount > maxCount) ? currentEl : modeGrade;
+}
+
+const modeO = function (grades) {
+  let counter = {};
+  for (let a = 0; a < grades.length; a++) {
+    if (grades[a] in counter) { counter[grades[a]]++ }
+    else {
+      counter[grades[a]] = 1
+    }
+  }
+  let mCount = 0;
+  let mode = "";
+  for (c in counter) {
+    if (mCount < counter[c]) {
+      mCount = counter[c];
+      mode = c;
+    }
+
+  }
+  return mode;
 }
