@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  background-color: FireBrick;
+}
+
+h1 {
+  color: white;
+  font-family: cursive;
+  text-align: center;
+}
+
+#analyze {
+  background-color: FireBrick;
+  color: white;
+  font-family: cursive;
+}
+
+h3{
+color: white;
+font-family: cursive;
+ text-align: center;
+}
+
+table {
+border-width: 2px;
+}
+
+th {
+background-color: Cornsilk;
+font-size: 14px;
+text-align: center;
+border-style: solid;
+border-color: Black;
+font-family: cursive;
+}
+
+td {
+background-color: White;
+width: 30px;
+font-size: 14px;
+text-align: center;
+margin-top: 12px;
+border-style: solid;
+border-color: Black;
+font-family: cursive;
+}
+</style>
+<script src = "textAnalyzer.js"> </script>
+</head>
+<body>
+<h1>Text Analyzer! :D</h1>
+<h3> Input text and we'll analyze it. </h3>
+<textarea id="words" rows="8" cols="95"></textarea>
+<br>
+<br>
+<button type = "button" id = "analyze" onclick = "analyze(words.value)"> Analyze! </button>
+<br>
+<br>
+<div id = "bla">
+</body>
+</html>

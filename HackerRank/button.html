@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Button</title>
+        <style>
+          #btn {
+            width: 96px
+            height: 48px;
+            font-size: 24px;
+          }
+        </style>
+        <script>
+          function count(){
+            let i = 1 * document.getElementById("btn").innerHTML;
+            document.getElementById("btn").innerHTML = ++i;
+          }
+        </script>
+    </head>
+    <body>
+        <button id = "btn" onclick = "count()"> 0 </button>
+    </body>
+</html>

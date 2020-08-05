@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		function getSquRoot(){
+let num = 1* document.getElementById("number").value;
+let g =  1 * document.getElementById("guess").value;
+let result = 1 * (((num / g) + g) / 2)
+if (Math.abs(result * result - num) < 0.00001){
+document.getElementById("results").innerHTML = "This is the square root of your number: " + result;
+} else {
+  document.getElementById("guess").value = result;
+}
+}
+	</script>
+</head>
+
+<body>
+	<h1>Radicals!! :D </h1>
+	<p>A fun and interactive way to find the square roots of non-perfect square numbers.
+		<br>
+	  <br>
+	  <p> Let's Begin!</p>
+<p> Input the number you want to find the square root of:</p>
+<input type = "number" id = "number">
+<br>
+<br>
+<p> Input your guess:</p>
+<input type = "number" id = "guess">
+<br>
+<br>
+<p>
+ These are the following steps to calculating the closest number to the square root of your inputted number:
+ <br>
+ <br>
+   Step 1: Divide your number by your guess.
+   <br>
+   <br>
+   Step 2: Add your guess to that quotient.
+   <br>
+   <br>
+   Step 3: Divide the sum by 2.
+   <br>
+   <br>
+   Step 4: Check if the resulting number is the square root of your number. If not, repeat the process and use the number you got as your guess.
+</p>
+<button type = "button" onclick = "getSquRoot()"> Find Square Root </button>
+<br>
+<br>
+<div id = "results"> </div>
+<div id = "fun"> </div>
+</body>
+</html>

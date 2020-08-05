@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+<style>
+body{
+width: 33%
+}
+
+#res{
+background-color: lightgray;
+border: solid;
+height: 48px;
+font-size: 20px;
+}
+
+.btn1{
+background-color: lightgreen;
+color: brown;
+width: 25%;
+height: 36px;
+font-size: 18px;
+margin: 0px;
+float: left;
+}
+
+.btnCleq{
+background-color: darkgreen;
+color: white;
+width: 25%;
+height: 36px;
+font-size: 18px;
+margin: 0px;
+float: left;
+}
+
+.btnEquation{
+background-color: black;
+color: red;
+width: 25%;
+height: 36px;
+font-size: 18px;
+margin: 0px;
+float: left;
+}
+
+
+</style>
+
+<script>
+function click0(){
+let prev = document.getElementById("res").innerHTML;
+document.getElementById("res").innerHTML = prev + "0"
+}
+
+function click1(){
+let prev1 = document.getElementById("res").innerHTML;
+document.getElementById("res").innerHTML = prev1 + "1"
+}
+
+function clickC(){
+document.getElementById("res").innerHTML = ""
+}
+
+function clickEq(){
+let s = document.getElementById("res").innerHTML
+let re = /(\d+)(\D)(\d+)/;
+let numbers = re.exec(s);
+let num1 = parseInt(numbers[1],2);
+let operator = numbers[2];
+let num2 = parseInt(numbers[3],2);
+let expr = num1 + operator + num2;
+let dResult = Math.floor(eval(expr));
+let result = dResult.toString(2);
+document.getElementById("res").innerHTML = result
+}
+
+function clickSum(){
+let prev2 = document.getElementById("res").innerHTML
+document.getElementById("res").innerHTML = prev2 + "+"
+}
+
+function clickDif(){
+let prev3 = document.getElementById("res").innerHTML
+document.getElementById("res").innerHTML = prev3 + "-"
+}
+
+function clickPro(){
+let prev4 = document.getElementById("res").innerHTML
+document.getElementById("res").innerHTML = prev4 + "*"
+}
+
+function clickQuo(){
+let prev5 = document.getElementById("res").innerHTML
+document.getElementById("res").innerHTML = prev5 + "/"
+}
+</script>
+
+</head>
+<body>
+
+<p>
+<div id = "btns">
+<div id = "res"></div>
+<button id = "btn0" class = "btn1" onclick = "click0()">0</button>
+<button id = "btn1" class = "btn1" onclick = "click1()">1</button>
+<button id = "btnClr" class = "btnCleq" onclick = "clickC()">C</button>
+<button id = "btnEql" class = "btnCleq" onclick = "clickEq()">=</button>
+<br>
+<button id = "btnSum" class = "btnEquation" onclick = "clickSum()">+</button>
+<button id = "btnSub" class = "btnEquation" onclick = "clickDif()">-</button>
+<button id = "btnMul" class = "btnEquation" onclick = "clickPro()">*</button>
+<button id = "btnDiv" class = "btnEquation" onclick = "clickQuo()">/</button>
+</div>
+</div>
+</p>
+
+</body>
+</html>

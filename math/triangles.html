@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		function typeOf(){
+      let side1 = 1 * document.getElementById("side1").value;
+      let side2 = 1 * document.getElementById("side2").value;
+      let side3 = 1 * document.getElementById("side3").value;
+      let sides = [side1, side2, side3];
+      let hi = sides.sort((a,b)=>a-b);
+      let longSide = hi[2];
+      let shortSide = hi[0];
+      let middleSide = hi[1];
+      if(shortSide + middleSide <= longSide){
+      alert("Please adjust the inputted lengths.")
+      return
+      }
+      if(side1 !== side2 && side2 !== side3 && side3 !== side1){
+        document.getElementById("result").innerHTML = "It is a SCALENE triangle."
+        }
+
+        if(shortSide === middleSide && middleSide === longSide && shortSide === longSide){
+        document.getElementById("result").innerHTML = "It is an EQUILATERAL triangle."
+        }
+
+        if(shortSide === middleSide && middleSide !== longSide || middleSide === longSide && longSide !== shortSide){
+        document.getElementById("result").innerHTML = "It is an ISOSCELES triangle."
+        }
+    }
+
+    function right(){
+      let side1 = 1 * document.getElementById("side1").value;
+      let side2 = 1 * document.getElementById("side2").value;
+      let side3 = 1 * document.getElementById("side3").value;
+      let sides = [side1, side2, side3];
+      let hi = sides.sort((a,b)=>a-b);
+      let hypotenuse = hi[2];
+      let leg1 = hi[0];
+      let leg2 = hi[1];
+      if(leg1 + leg2 <= hypotenuse){
+      alert("Please adjust the inputted lengths.")
+      return
+      }
+      if(leg1**2 + leg2**2 === hypotenuse**2){
+      document.getElementById("result2").innerHTML = "It is a right triangle."
+      } else {document.getElementById("result2").innerHTML ="It is not a right triangle."}
+    }
+
+    function len(){
+    let side1 = 1 * document.getElementById("side1").value;
+    let side2 = 1 * document.getElementById("side2").value;
+    let side3 = 1 * document.getElementById("side3").value;
+    let sides = [side1, side2, side3];
+    let hi = sides.sort((a,b)=>a-b);
+    let a = hi[2];
+    let b = hi[0];
+    let c = hi[1];
+    let base = a;
+    let s = 1 * (a + b + c) / 2;
+    let area = Math.sqrt(s * (s - a)*(s - b)*(s - c));
+    let height = (2 * area) / base;
+    document.getElementById("result3").innerHTML = "The height of the triangle is " + height + " and the base is " + base + " .";
+    }
+
+    function area(){
+    let side1 = 1 * document.getElementById("side1").value;
+    let side2 = 1 * document.getElementById("side2").value;
+    let side3 = 1 * document.getElementById("side3").value;
+    let sides = [side1, side2, side3];
+    let hi = sides.sort((a,b)=>a-b);
+    let a = hi[2];
+    let b = hi[0];
+    let c = hi[1];
+    let base = a;
+    let s = 1 * (a + b + c) / 2;
+    let area = Math.sqrt(s*(s - a)*(s - b)*(s - c));
+    document.getElementById("result4").innerHTML = "The area of your triangle is " + area + " ."
+    }
+
+    function draw(){
+      debugger;
+    let side1 = 1 * document.getElementById("side1").value;
+    let side2 = 1 * document.getElementById("side2").value;
+    let side3 = 1 * document.getElementById("side3").value;
+    let sides = [side1, side2, side3];
+    let hi = sides.sort((a,b)=>a-b);
+    let a = hi[2];
+    let b = hi[0];
+    let c = hi[1];
+    let base = a;
+    let s = 1 * (a + b + c) / 2;
+    let area = Math.sqrt(s * (s - a)*(s - b)*(s - c));
+    let height = (2 * area) / base;
+    let x1 = 0;
+    let y1 = 0;
+    let x2 = Math.sqrt(b**2 - height**2);
+    let y2 = height;
+    let x3 = a;
+    let y3 = 0;
+    triangle.innerHTML = `<polygon points="${x1},${y1} ${x2},${y2} ${x3},${y3}" style="fill:red;stroke:black;stroke-width:5" />`
+    }
+	</script>
+</head>
+
+<body>
+	<h1>Triangle Evaluator :D</h1>
+	<p> Design an HTML5 app that evaluates triangles. Use 3 input boxes to let the user enter the three sides by length. Validate
+		that the input values are between 1 and 300. Do not restrict the order of the values (e.g., the longest first) Validate
+		that the lengths entered form a triangle; Otherwise, alert user to change the inputs, rejecting the inputs. If the input
+		lengths form a triangle, draw the triangle with the following instruction:
+		<a href="https://www.w3schools.com/graphics/svg_polygon.asp" target="self"> https://www.w3schools.com/graphics/svg_polygon.asp</a>
+		Use big letters to inform the user: That is a "SCALENE" or "EQUILATERAL" or "ISOSCELES" or "RIGHT" triangle. It has an area
+		of ___, a base of ___ and a height of ___.
+		<br>
+    <br>
+    <h3> Input the length of sides of your triangle.</h3>
+    <br>
+		<input type = "number" id = "side1"/>
+    <br>
+    <br>
+    <input type = "number" id = "side2"/>
+    <br>
+    <br>
+    <input type = "number" id = "side3"/>
+    <br>
+    <br>
+    <button type = "button" onclick = "typeOf()"> What type of triangle is it?</button>
+    <button type = "button" onclick = "right()"> Is it a right triangle? </button>
+    <button type = "button" onclick = "len()"> What is the base and height? </button>
+    <br>
+    <br>
+    <div id = "result"></div> 
+    <div id = "result2"></div>
+    <div id = "result3"></div>
+    <br>
+    <br>
+    <button type = "button" onclick = "area()"> What is the area? </button>
+    <div id = "result4"></div>
+    <br>
+    <br>
+    <button type = "button" onclick = "draw()"> Draw! </button>
+    <br>
+    <br>
+    <h3> Choose Your Colors </h3>
+    <h5> This  one is for the color of the triangle itself.</h5>
+    <input type = "color" id = "color1"/>
+    <h5> This is for the border.</h5>
+    <input type = "color" id = "color2"/>
+    <br>
+    <br>
+    <br>
+    <br>
+  <svg id = "triangle" height="1000" width="1000">
+  <polygon points="200,20 250,190 160,210" style="fill:red;stroke:black;stroke-width:5" />
+    </body>
+    </html>

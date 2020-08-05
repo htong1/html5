@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			background-color: black;
+			border: groove;
+			border-weight: 40px;
+			font-family: cursive;
+		}
+
+		h1 {
+			color: red;
+			text-align: center;
+			font-family: cursive;
+		}
+
+		h3 {
+			color: red;
+			font-family: cursive;
+		}
+
+		p {
+			color: red;
+			font-family: cursive;
+		}
+
+		.btn {
+			color: red;
+			background-color: black;
+		}
+
+		#message {
+			background-color: black;
+			color: white;
+			border-color: black;
+		}
+
+		#eMessage {
+			background-color: black;
+			color: white;
+			border-color: black;
+		}
+
+		#key {
+			background-color: red;
+		}
+	</style>
+
+	<script>
+		function encrypt() {
+                let key = document.getElementById("key").value;
+                let message = document.getElementById("message").value;
+                b = convert(message, key);
+                b = btoa(b);
+                document.getElementById("eMessage").value = b;
+            }
+
+            function convert(message, key) {
+                let b = "";
+                for (let i = 0; i < message.length; i++) {
+                    let value1 = message[i].charCodeAt(0);
+                    let value2 = key[i % key.length].charCodeAt(0);
+                    b += String.fromCharCode(value1 ^ value2);
+                }
+                return b;
+            }
+
+            function decrypt(){
+            let key = document.getElementById("key").value;
+                let message = document.getElementById("eMessage").value;
+                message = atob(message);
+                message = convert(message, key);
+                document.getElementById("eMessage").value = message;
+            }
+	</script>
+</head>
+
+<body>
+	<h1>Encrypter >:D</h1>
+	<h3>Welcome to the Encrypter! Here, you can encrypt and decrypt your message!</h3>
+	<br />
+        <p>Let's begin by inputting a number that will act as your key.</p>
+        <br />
+        <input type="password" id="key" />
+        <br />
+        <br />
+        <p>Input your message you would like to be encrypted.</p>
+        <textarea id="message" rows="6" cols="68"></textarea>
+        <br />
+        <button type="button" class = "btn" onclick="encrypt()">Encrypt</button>
+        <br />
+        <br />
+        <button type="button" class = "btn" onclick="decrypt()">Decrypt</button>
+        <br />
+        <p>Here is your encrypted message! By pressing decrypt, you can reverse the encryption and get your original message.</p>
+        <textarea id="eMessage" rows="6" cols="68"></textarea>
+    </body>
+</html>
