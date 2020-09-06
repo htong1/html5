@@ -1,29 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
-<head>Random Website
-  <style>
-    body {
-      background-color: lightblue;
-    }
-    h1{
-      color: white;
-      }
+<head>
+	<style>
+		body {
+			background-color: lightblue;
+       border-style: groove;
+           border-width: 10px;
+           border-color: white;
+		}
 
-      p{
-        color: white;
-      }
-  </style>
+		h1 {
+			color: white;
+      font-family: cursive;
+      text-align: center;
+		}
+
+		p {
+			color: white;
+      font-family: cursive;
+      background-color: CornFlowerBlue;
+      text-align: center;
+		}
+  
+  #motivate{
+    color: white;
+    font-family: cursive;
+    background-color: CornFlowerBlue;
+    border-style: double;
+    border-width: 10px;
+    font-style: italic;
+  }
+
+  a{
+    font-family: cursive;
+  }
+
+  .weather{
+    	color: white;
+      font-family: cursive;
+      text-align: center;
+  }
+  	</style>
+
+<script>
+  fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    document.getElementById("motivate").innerHTML = `Motivational Quote of the moment:  ${data[Math.floor(Math.random() * data.length)].text} By: ${data[Math.floor(Math.random() * data.length)].author}`;
+  }); 
+
+  let key = "c01b916d7dc78d6669e338ee409b9dc5";
+  function weatherBalloon(cityID) {
+    debugger;
+	fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)  
+	.then(function(resp) { return resp.json() }) // Convert data to json
+	.then(function(data) {
+		drawWeather(data); // Call drawWeather
+	})
+	.catch(function() {
+		// catch any errors
+	});
+}
+
+weatherBalloon(5368361);
+
+function drawWeather( d ) {
+	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+	
+	document.getElementById('description').innerHTML = "Description: " + d.weather[0].description;
+	document.getElementById('temp').innerHTML =  "Temperature: " + fahrenheit + '&deg;';
+	document.getElementById('location').innerHTML = "City: " + d.name;
+  document.getElementById('feelslike').innerHTML = "Feels Like: " + d.main.feels_like;
+  document.getElementById('min').innerHTML = "Lows: " + d.main.temp_min; 
+  document.getElementById('max').innerHTML = "Highs: " + d.main.temp_max;
+  document.getElementById('pressure').innerHTML = "Pressure: " + d.main.pressure;
+  document.getElementById('humidity').innerHTML = "Humidity: " + d.main.humidity;
+  document.getElementById('visibility').innerHTML = "Visibility: " + d.visibility;
+  document.getElementById('sunrise').innerHTML = "Sunrise: " + new Date(d.sys.sunrise).toString().split("1970")[1];
+  document.getElementById('sunset').innerHTML = "Sunset: " + new Date(d.sys.sunset).toString().split("1970")[1];
+}
+	</script>
 </head>
-<h1> Hillary's website</h1>
-<p> Hello, my name is Hillary. Welcome to my website. Please click on any links below to explore. </p>
+
+<h1> Random Websites :D</h1>
+<body>
+<div id = "motivate"> </div>
+<div id="weather">
+    <div class = "weather" id="description"></div>
+    <div class = "weather" id="temp"></div>
+    <div class = "weather" id="location"></div>
+    <div class = "weather" id="feelslike"></div>
+    <div class = "weather" id="min"></div>
+    <div class = "weather" id="max"></div>
+    <div class = "weather" id="pressure"></div>
+    <div class = "weather" id="humidity"></div>
+    <div class = "weather" id="visibility"></div>
+    <div class = "weather" id="sunrise"></div>
+    <div class = "weather" id="sunset"></div>
+    
+</div>
+<p> Good day, stranger. You've stumbled upon my website. Feel free to explore the links. 'til next time.</p>
 <a href="signup.html" target="self"> Sign Up</a>
 <br>
-<a href="CharacterChart.html"> Ascii Number Converter</a>
+<a href="Miscellaneous/CharacterChart.html"> Ascii Number Converter</a>
 <br>
 <a href="math/nilakantha.html"> Nilakantha</a>
 <br>
-<a href="temperature_converter.html"> Temperature
+<a href="Miscellaneous/temperature_converter.html"> Temperature
 Converter</a>
 <br>
 <a href="NumberFun.html"> Fun with Numbers</a>
@@ -51,3 +138,9 @@ Converter</a>
 <a href="Contact_Manager/contacts.html"> Contact Manager!</a>
 <br>
 <a href="Words!!!/textAnalyzer.html"> Text Analyzer!</a>
+<br>
+<a href="Miscellaneous/fetch.html"> Fetch Example!</a>
+<br>
+<a href="about:blank" target = "self"> Superior Console!</a>
+</body>
+</html>

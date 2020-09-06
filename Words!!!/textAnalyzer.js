@@ -56,15 +56,14 @@ function frequency(wordMap) {
 
 function letterAnalysis(words){
     let cleanWords = clean(words);
-    let letters = cleanWords.split("");
+    let letters = cleanWords.replace(/\W/g, "");
+    letters = letters.split("");
     const letterMap = new Map();
     for(let i = 0; i < letters.length; i++){
     if (letterMap.has(letters[i])) {
             letterMap.set(letters[i], letterMap.get(letters[i]) + 1);
         } else {
-          if(letters[i].search(/\w+/) > -1){
             letterMap.set(letters[i], 1);
-        }
         }
     }
     let letterTotal = letterFrequency(letterMap);
@@ -103,3 +102,25 @@ function letterFrequency(letterMap) {
     }
     return letterTotal;
 }
+
+const isPalindrome = function(words) {
+words = words.toLowerCase().replace(/[\,\.\(\)\&\{\}\[\]\`\~\:\;\"\<\>\?\+\$\@\#\%\*\=\-\^\\\/\n\W/]/g, "");
+words = words.replace(/[\-\_\/]/g, "");
+if(words.split("").reverse().join("") === words){
+  result.innerHTML = "It is a palindrome!";
+} else {
+  result.innerHTML = "It is not a palindrome!"
+}  
+};
+
+var isAnagram = function(word1, word2) {
+let wordA = document.getElementById("word1").value;
+let wordB = document.getElementById("word2").value;
+wordA = wordA.split("").sort().join("");
+wordB = wordB.split("").sort().join("");
+  if(wordA == wordB){
+      document.getElementById("result2").innerHTML = "It is an anagram!";
+  } else {
+      document.getElementById("result2").innerHTML = "It is not an anagram!";
+  }
+};
